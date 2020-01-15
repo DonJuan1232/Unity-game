@@ -13,12 +13,15 @@ public class Movement : MonoBehaviour
     public GameObject wallL;
     public GameObject wallR;
     public GameObject player;
+    public GameObject wallLClone;
+    public GameObject wallRClone;
 
+    public int MoveDown = 150;
     public void right()
     {
         if (WallTouchR == true)
         {
-            rb.AddForce(-1500, 1000, 0);
+            rb.AddForce(-1500, 0, 0);
             new WaitForSeconds(0.5f);
             WallTouchR = false;
         }
@@ -28,7 +31,7 @@ public class Movement : MonoBehaviour
     {
         if (WallTouchL == true)
         {
-            rb.AddForce(1500, 1000, 0);
+            rb.AddForce(1500, 0, 0);
             new WaitForSeconds(0.5f);
             WallTouchL = false;
         }
@@ -37,13 +40,13 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter(Collision hit)
     {
-        if (hit.transform.gameObject.name == "wallR" || hit.transform.gameObject.name == "wallR(Clone)")
+        if (hit.transform.gameObject.tag == "WallR")
         {
             WallTouchR = true;
             
         }
 
-        if (hit.transform.gameObject.name == "wallL" || hit.transform.gameObject.name == "wallL(Clone)")
+        if (hit.transform.gameObject.tag == "WallL")
         {
             WallTouchL = true;
             
