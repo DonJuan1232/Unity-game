@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    private void OnCollisionStay(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
 
         if (collision.gameObject.tag == "Coin")
         {
-            Debug.Log("coin");
+            ScoreText.coinAmount += 1;
             Destroy(collision.gameObject);
+
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

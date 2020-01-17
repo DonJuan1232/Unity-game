@@ -8,7 +8,16 @@ public class DestroyGameobjects : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         
-        if (collision.gameObject.tag == "WallL" || collision.gameObject.tag == "WallR")
+        if (collision.gameObject.tag == "WallL" || collision.gameObject.tag == "WallR" || collision.gameObject.tag == "Coin" || collision.gameObject.tag == "Block")
+        {
+            Debug.Log("works");
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "WallL" || collision.gameObject.tag == "WallR" || collision.gameObject.tag == "Coin" || collision.gameObject.tag == "Block")
         {
             Debug.Log("works");
             Destroy(collision.gameObject);
