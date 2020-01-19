@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ToGame : MonoBehaviour
+public class ToSettings : MonoBehaviour
 {
-    public void toGame()
+    public void toSettings()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Settings");
     }
 }
