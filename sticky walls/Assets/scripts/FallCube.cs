@@ -15,9 +15,15 @@ public class FallCube : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
-            new WaitForSeconds(10.0f);
+            
+            FindObjectOfType<AudioManager>().Play("Death");
+
+            new WaitForSeconds(2);  
             SceneManager.LoadScene("MainMenu");
+            
+            
         }
     }
+
+   
 }

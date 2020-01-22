@@ -22,16 +22,18 @@ public class Movement : MonoBehaviour
         if (WallTouchR == true)
         {
             rb.AddForce(-1500, 0, 0);
+            FindObjectOfType<AudioManager>().Play("Jump");
             new WaitForSeconds(0.5f);
             WallTouchR = false;
         }
     }
-
+    
     public void left()
     {
         if (WallTouchL == true)
         {
             rb.AddForce(1500, 0, 0);
+            FindObjectOfType<AudioManager>().Play("Jump");
             new WaitForSeconds(0.5f);
             WallTouchL = false;
         }
