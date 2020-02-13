@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     bool WallTouchL = false;
     bool WallTouchR = false;
 
+    public Vector3 PlayerMove;
 
     public Rigidbody rb;
 
@@ -22,6 +23,7 @@ public class Movement : MonoBehaviour
         if (WallTouchR == true)
         {
             rb.AddForce(-1500, 0, 0);
+                       
             FindObjectOfType<AudioManager>().Play("Jump");
             new WaitForSeconds(0.5f);
             WallTouchR = false;
@@ -33,6 +35,7 @@ public class Movement : MonoBehaviour
         if (WallTouchL == true)
         {
             rb.AddForce(1500, 0, 0);
+            
             FindObjectOfType<AudioManager>().Play("Jump");
             new WaitForSeconds(0.5f);
             WallTouchL = false;
@@ -56,6 +59,7 @@ public class Movement : MonoBehaviour
     }
 
     
+
 
 
 

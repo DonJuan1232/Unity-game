@@ -8,6 +8,6 @@ public class ToGame : MonoBehaviour
     public void toGame()
     {
         SceneManager.LoadScene("GameScene");
-        Debug.Log("works");
+        
     }
 }

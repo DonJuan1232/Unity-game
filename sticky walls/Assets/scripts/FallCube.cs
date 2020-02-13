@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class FallCube : MonoBehaviour
 {
     public Rigidbody rb;
+
+    public GameObject Player;
+
+    /*public animator deathAnim; */
+
     void Update()
     {
         rb.AddForce(0, -5, 0);
@@ -15,14 +20,23 @@ public class FallCube : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            
-            FindObjectOfType<AudioManager>().Play("Death");
 
-            new WaitForSeconds(2);  
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(killPlayer());
             
             
         }
+    }
+
+    IEnumerator killPlayer()
+    {
+        FindObjectOfType<AudioManager>().Play("Death");
+        /* play death animation */
+        
+        SceneManager.LoadScene("MainMenu");
+
+
+
+        yield return 0;
     }
 
    

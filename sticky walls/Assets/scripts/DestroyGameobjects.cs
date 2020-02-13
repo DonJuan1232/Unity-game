@@ -10,7 +10,7 @@ public class DestroyGameobjects : MonoBehaviour
         
         if (collision.gameObject.tag == "WallL" || collision.gameObject.tag == "WallR" || collision.gameObject.tag == "Coin" || collision.gameObject.tag == "Block")
         {
-            Debug.Log("works");
+            
             Destroy(collision.gameObject);
         }
     }
@@ -19,7 +19,7 @@ public class DestroyGameobjects : MonoBehaviour
     {
         if (collision.gameObject.tag == "WallL" || collision.gameObject.tag == "WallR" || collision.gameObject.tag == "Coin" || collision.gameObject.tag == "Block")
         {
-            Debug.Log("works");
+            
             Destroy(collision.gameObject);
         }
     }
