@@ -12,15 +12,22 @@ public class HighScore : MonoBehaviour
     public void Start()
     {
         PlayerPrefs.GetFloat("highScore");
+
+        
     }
 
     public void Update()
     {
-        if (PlayerPrefs.GetFloat("highScore") > currentScore)
+        if (currentScore > highScore)
         {
+
+            currentScore = highScore;
+
+            highScoreText = GetComponent<Text>();
+
             highScoreText.text = highScore.ToString();
-            //You need this to save high score across game sessions
-            PlayerPrefs.SetFloat("High Score", highScore);
+            
+            PlayerPrefs.SetFloat("highScore", highScore);
         }
 
 
@@ -33,8 +40,8 @@ public class HighScore : MonoBehaviour
         currentScore = PlayerPrefs.GetFloat("currentTime");
 
         
+        highScore = PlayerPrefs.GetFloat("highScore");
 
-        
 
     }
 
