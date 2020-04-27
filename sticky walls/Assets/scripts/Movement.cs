@@ -17,12 +17,15 @@ public class Movement : MonoBehaviour
     public GameObject wallLClone;
     public GameObject wallRClone;
 
+    public static int veloL = 1500;
+    public static int veloR = -1500;
+
     public int MoveDown = 150;
     public void right()
     {
         if (WallTouchR == true)
         {
-            rb.AddForce(-1500, 0, 0);
+            rb.AddForce(veloR, 0, 0);
                        
             FindObjectOfType<AudioManager>().Play("Jump");
             new WaitForSeconds(0.5f);
@@ -34,7 +37,7 @@ public class Movement : MonoBehaviour
     {
         if (WallTouchL == true)
         {
-            rb.AddForce(1500, 0, 0);
+            rb.AddForce(veloL, 0, 0);
             
             FindObjectOfType<AudioManager>().Play("Jump");
             new WaitForSeconds(0.5f);
@@ -56,6 +59,9 @@ public class Movement : MonoBehaviour
             WallTouchL = true;
             
         }
+
+        
+
     }
 
     

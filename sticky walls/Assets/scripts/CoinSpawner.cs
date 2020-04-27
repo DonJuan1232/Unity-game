@@ -6,8 +6,8 @@ public class CoinSpawner : MonoBehaviour
 {
     public GameObject spawnObject;
 
-    public float maxTime = 5;
-    public float minTime = 2;
+    public float maxTime = 10;
+    public float minTime = 1;
 
     //current time
     private float time;
@@ -49,5 +49,40 @@ public class CoinSpawner : MonoBehaviour
     {
         spawnTime = Random.Range(minTime, maxTime);
     }
+
+    public void Update()
+    {
+        if (PlayerPrefs.GetFloat("currentTime") == 10)
+        {
+            maxTime = 9;
+        }
+
+        if (PlayerPrefs.GetFloat("currentTime") == 20)
+        {
+            maxTime = 8;
+        }
+
+        if (PlayerPrefs.GetFloat("currentTime") == 30)
+        {
+            maxTime = 7;
+        }
+
+        if (PlayerPrefs.GetFloat("currentTime") == 40)
+        {
+            maxTime = 6;
+        }
+
+        if (PlayerPrefs.GetFloat("currentTime") == 50)
+        {
+            maxTime = 5;
+        }
+
+        if (PlayerPrefs.GetFloat("currentTime") == 70)
+        {
+            maxTime = 4;
+        }
+
+    }
+
 
 }
